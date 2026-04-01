@@ -2,78 +2,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI in Your Pocket</title>
-  <style>
-    body {
+  <title>AI in Your Pocket</title>  <!-- Google Sans-like font -->  <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap" rel="stylesheet">  <style>
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #111;
-      text-align: center;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Product Sans', Arial, sans-serif;
     }
-    .container {
-      padding: 40px 20px;
-      max-width: 500px;
-      margin: auto;
-    }
-    h1 {
-      font-size: 28px;
-      line-height: 1.3;
-    }
-    p {
-      font-size: 16px;
-      color: #444;
-    }
-    .btn {
-      display: block;
-      background: #673AB7;
+
+    body {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
       color: #fff;
-      padding: 15px;
-      margin-top: 20px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      overflow: hidden;
     }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      border-radius: 22px;
+      padding: 40px 25px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      animation: fadeUp 1s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .badge {
+      background: rgba(103, 58, 183, 0.25);
+      color: #c7b6ff;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 15px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 15px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    p.subtitle {
+      font-size: 15px;
+      color: #d1d1d1;
+      margin-bottom: 25px;
+      animation: fadeIn 2s ease;
+    }
+
+    .benefits div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 14px;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: slideIn 0.5s forwards;
+    }
+
+    .benefits div:nth-child(1) { animation-delay: 0.3s; }
+    .benefits div:nth-child(2) { animation-delay: 0.5s; }
+    .benefits div:nth-child(3) { animation-delay: 0.7s; }
+    .benefits div:nth-child(4) { animation-delay: 0.9s; }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .benefits span {
+      margin-right: 10px;
+      color: #9be7ff;
+    }
+
     input {
       width: 100%;
       padding: 14px;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.02);
+    }
+
+    input::placeholder {
+      color: #aaa;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #7b5cff, #5a3fff);
+      color: white;
       font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-    .benefits {
-      text-align: left;
-      margin-top: 20px;
+
+    button:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(123,92,255,0.6);
     }
-    .benefits li {
-      margin-bottom: 10px;
+
+    button:active {
+      transform: scale(0.98);
     }
-    .footer {
-      margin-top: 30px;
+
+    .trust {
+      margin-top: 15px;
       font-size: 12px;
-      color: #888;
+      color: #aaa;
+      text-align: center;
+      animation: fadeIn 2.5s ease;
     }
-  </style>
-</head>
-<body>  <div class="container"><h1>Stop Wasting Hours on School Work — Use AI Instead</h1>
 
-<p>Download this free guide and discover 7 powerful AI tools that help you write faster, study smarter, and get more done in minutes.</p>
+    .social-proof {
+      margin-top: 20px;
+      font-size: 13px;
+      text-align: center;
+      color: #cfcfcf;
+      animation: fadeIn 3s ease;
+    }
 
-<ul class="benefits">
-  <li>Finish assignments faster</li>
-  <li>Understand difficult topics easily</li>
-  <li>Create presentations in minutes</li>
-  <li>Save 5+ hours every week</li>
-</ul>
+  </style></head><body>  <div class="card"><div class="badge">🔥 Free AI Guide</div>
+
+<h1>Stop Wasting Hours on School Work — Use AI Instead</h1>
+
+<p class="subtitle">
+  Discover 7 powerful AI tools that help you write faster, study smarter, and finish tasks in minutes — even if you're a complete beginner.
+</p>
+
+<div class="benefits">
+  <div><span>✔</span>Finish assignments 2x faster</div>
+  <div><span>✔</span>Understand difficult topics easily</div>
+  <div><span>✔</span>Create slides & designs instantly</div>
+  <div><span>✔</span>Save 5+ hours every week</div>
+</div>
 
 <form action="https://formspree.io/f/yourformid" method="POST">
   <input type="text" name="name" placeholder="Your name (optional)">
   <input type="email" name="email" placeholder="Enter your email" required>
-  <button class="btn" type="submit">Get Free Access</button>
+
+  <button type="submit">Download Free AI Guide Now</button>
 </form>
 
-<p class="footer">Instant access. 100% free.</p>
+<div class="trust">Enter your email to get instant access • 100% free • No spam</div>
+
+<div class="social-proof">Join students already using AI smarter 🚀</div>
 
   </div></body>
-  </html>
+                                                                                                                                                                                      </html>
