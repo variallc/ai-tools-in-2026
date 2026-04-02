@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're In 🎉</title>  <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap" rel="stylesheet">  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Product Sans', Arial, sans-serif; }
+
+    body {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:100vh;
+      padding:20px;
+      text-align:center;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(20px);
+      border-radius:20px;
+      padding:40px 25px;
+      max-width:480px;
+      width:100%;
+      box-shadow:0 20px 60px rgba(0,0,0,0.5);
+      animation:fadeUp 0.8s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(30px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    h1 {
+      font-size:28px;
+      margin-bottom:15px;
+    }
+
+    p {
+      color:#d1d1d1;
+      margin-bottom:20px;
+      font-size:15px;
+    }
+
+    .download-btn {
+      display:inline-block;
+      padding:14px 20px;
+      border-radius:12px;
+      background: linear-gradient(135deg,#00c853,#00e676);
+      color:#000;
+      font-weight:bold;
+      text-decoration:none;
+      margin-bottom:20px;
+      transition:0.3s;
+    }
+
+    .download-btn:hover {
+      transform:translateY(-2px);
+      box-shadow:0 10px 25px rgba(0,255,150,0.5);
+    }
+
+    .whatsapp {
+      display:block;
+      margin-top:10px;
+      color:#25D366;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .countdown {
+      margin-top:15px;
+      font-size:13px;
+      color:#aaa;
+    }
+
+  </style></head><body><div class="card">  <h1>🎉 You're In!</h1>  <p>Your free AI guide is ready. Click below to download it instantly.</p><a href="https://your-ebook-link.com" class="download-btn" id="downloadBtn">Download Now</a>
+
+  <p>We’ve also sent it to your email with extra tips. Don’t miss it.</p><a href="#" class="whatsapp">👉 Join our WhatsApp channel for more AI tips</a>
+
+  <div class="countdown" id="countdown">Redirecting in 10 seconds...</div></div><script>
+  let seconds = 10;
+  const countdown = document.getElementById('countdown');
+
+  const timer = setInterval(() => {
+    seconds--;
+    countdown.textContent = "Redirecting in " + seconds + " seconds...";
+
+    if(seconds <= 0) {
+      clearInterval(timer);
+      window.location.href = "https://your-upsell-link.com";
+    }
+  }, 1000);
+</script></body>
+</html>
